@@ -1,0 +1,21 @@
+{
+    "short_name": "Component Land",
+    "name": "Component Land",
+    "icons": [
+      {
+        "src": "/resources/lwc_192x192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "/resources/lwc_512x512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "start_url": "/",
+    "background_color": "#011627",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#011627"
+  }

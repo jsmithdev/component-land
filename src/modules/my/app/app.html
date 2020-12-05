@@ -1,0 +1,26 @@
+<template>
+    <div class="app">
+
+        <land-header
+            icon="./resources/lwc.png"
+            title="Component Land"
+            items={navigationItems}
+        ></land-header>
+
+        <section class="content">
+        
+            <template if:true={projects}>
+                <template for:each={projects} for:item="item">
+                        
+                    <land-card 
+                        key={item.title}
+                        item={item}
+                    ></land-card>
+                </template>
+            </template>
+
+            <br><br><br><br><br><br><br><br>
+        </section>
+        
+    </div>
+</template>

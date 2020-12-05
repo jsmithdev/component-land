@@ -1,0 +1,117 @@
+
+h2 {
+    padding-top: .8rem;
+    margin: 0 auto;
+    background: var(--color-lightest);
+}
+img {
+    max-width: 100%;
+    max-height: 200px;
+    background: grey;
+}
+
+span.trigger_info > svg {
+    width: 50px;
+    height: auto;
+    cursor: pointer;
+
+    border-radius: 25px;
+    fill: var(--color-dark);
+    
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    background-color: white;
+    box-shadow: 0 0 5px var(--color-light);
+    cursor: pointer;
+    /* padding: 3px 0px 3px 3px; */
+    -webkit-tap-highlight-color: transparent;
+    z-index: 99;
+}
+span.trigger_info > svg.true {
+    transform: rotate(180deg);
+}
+
+
+a.deploy {
+    display: inline-flex;
+    cursor: pointer;
+    border-radius: 25px;
+    background-color: var(--color-lightest);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    
+    padding: .4rem 1rem;
+    height: auto;
+    padding: .4rem;
+
+    margin: .4rem;
+
+    text-decoration: none;
+}
+a.deploy span {
+    line-height: 8vw;
+}
+a.deploy svg {
+    width: 8vw;
+    height: 8vw;
+    margin: .8em;
+    min-width: 2rem;
+    min-height: 2rem;
+    max-width: 3em;
+    max-height: 3em;
+
+    background-color: var(--color-lightest);
+    fill: var(--color-mid);
+    
+
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+
+}
+
+
+
+.card {
+    cursor: pointer;
+    margin: 0 auto;
+    /* margin: 0 0px; */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    max-width: 1000px;
+    color: var(--color-dark);
+    text-align: center;
+    width: 98%;
+    /* padding-bottom: 1rem; */
+    /* box-shadow: 0 1px 3px var(--color-lightest),0 1px 2px var(--color-light); */
+    transition: all .3s cubic-bezier(.25,.8,.25,1);
+}
+.card:hover {
+    box-shadow: 0 4px 8px var(--color-lightest), 0 8px 8px var(--color-light);
+}
+
+.image_container {
+    border-radius: 8px 8px 0 0;
+    background: var(--color-mid-dark);
+    opacity: .9;
+    padding: 0;
+    margin: 0;
+    height: 200px;
+}
+.description {
+    padding: .8rem 0;
+    background: var(--color-lightest);
+}
+
+.details {
+    transition: all .3s cubic-bezier(.25,.8,.25,1);
+    background: var(--color-lightest);
+    border-radius: 0 0 8px 8px;
+    padding-bottom: .4rem;
+}
+
+.long {
+    padding-right: 1rem;
+    text-align: left;
+}
+
+
