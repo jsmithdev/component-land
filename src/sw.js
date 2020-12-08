@@ -7,7 +7,7 @@ self.addEventListener('install', function(e) {
           '/0.app.js',
           '/app.js',
           '/resources/favicon.ico',
-          '/resources/lwc.png'
+          '/resources/android-icon-192x192.png'
         ])
       })
     ) */

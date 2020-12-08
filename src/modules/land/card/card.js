@@ -1,6 +1,6 @@
 import { api, LightningElement } from 'lwc'
 
-const DEFAULT_IMG = 'https://i.imgur.com/zp1kNCT.jpg'
+const DEFAULT_IMG = './resources/android-icon-192x192.png'
 const DEFAULT_DESC = 'No description present'
 
 export default class LwcCard extends LightningElement {

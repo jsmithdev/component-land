@@ -9,6 +9,14 @@ export default class App extends LightningElement {
     async connectedCallback(){
         //const url = await (await fetch('/components')).text()
         //const projects = await( await fetch( url ) ).json()
+        /* 
+        todo use search params as init filtering
+        const params = (new URL(document.location)).searchParams;
+        const type = params.get('type'); 
+        const cmp = params.get('cmp'); 
+        console.dir(type)
+        console.dir(cmp)
+         */
             
         const url = this.getUrl('jsmithdev','component-land-data','main','lwc-data.json')
         const projects = await (await fetch( url )).json()
