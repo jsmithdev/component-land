@@ -49,9 +49,6 @@ export default class lightndown extends LightningElement {
             
             this.init = true
 
-            console.log(this.baseurl)
-
-
             this.marked = Marked()
 
             this.marked.setOptions({
