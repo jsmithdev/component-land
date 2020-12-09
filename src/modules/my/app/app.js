@@ -21,8 +21,9 @@ export default class App extends LightningElement {
         const url = this.getUrl('jsmithdev','component-land-data','main','lwc-data.json')
         const projects = await (await fetch( url )).json()
 
-        console.log('projects=>')
-        console.log(projects)
+        //console.log('projects=>')
+        //console.log(projects)
+
         this.projects = projects.map(p => {
 
             return Object.assign(p, {
@@ -36,6 +37,51 @@ export default class App extends LightningElement {
                     return `https://raw.githubusercontent.com/${p.author}/${p.name}/master/README.md`
                 }
             })
+        })
+
+        if(!this._init_projects){
+            this._init_projects = Array.from(this.projects)
+        }
+    }
+
+    handleSearch(event) {
+        
+        const {value} = event.detail
+
+        if(value === ''){ 
+            this.projects = this._init_projects 
+            return
+        }
+
+        const input = value.toLowerCase()
+
+        this.projects = this._init_projects.filter(item => {
+            return item.author.toLowerCase().includes(input)
+            || item.description.toLowerCase().includes(input)
+            || item.name.toLowerCase().includes(input)
+            || item.title.toLowerCase().includes(input)
+            || item.keywords.toLowerCase().includes(input)
+        })
+    }
+    handleFilter(event) {
+        
+        const { 
+            platform,
+            type
+        } = event.detail
+
+        this.current = {
+            platform,
+            type,
+        }
+
+        if(type === 'all'){ 
+            this.projects = this._init_projects 
+            return
+        }
+        this.projects = this._init_projects.filter(item => {
+            return item.type.toLowerCase() === type
+            && item.platform.toLowerCase() === platform
         })
     }
 
