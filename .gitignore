@@ -1,4 +1,4 @@
-.cache
+*.cache
 scratch.js
 .history
 
