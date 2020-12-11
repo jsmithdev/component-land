@@ -2,6 +2,10 @@
 import { api, LightningElement } from 'lwc';
 
 export default class LandHeader extends LightningElement {
+
+    @api
+    searchValue = '';
+
     @api icon;
 
     @api
@@ -14,10 +18,6 @@ export default class LandHeader extends LightningElement {
         if(!this._init_items){
             this._init_items = Array.from( this._items );
         }
-        console.dir(JSON.parse(JSON.stringify({
-            items: this._items,
-            object,
-        })));
     }
     
     setValue(event){
@@ -32,7 +32,7 @@ export default class LandHeader extends LightningElement {
     hotkeys(event){
 
         this.value = event.target.value;
-        
+
         if(event.code === 'Enter'){ this.search(); return; }
         if(event.code === 'Esc'){ this.value = ''; this.searchValue = ''; return; }
 
