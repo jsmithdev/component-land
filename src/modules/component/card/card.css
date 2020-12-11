@@ -15,7 +15,7 @@ span.trigger_info > svg {
     cursor: pointer;
 
     border-radius: 25px;
-    fill: var(--color-dark);
+    fill: var(--color-mid);
     
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     background-color: white;
@@ -25,7 +25,7 @@ span.trigger_info > svg {
     -webkit-tap-highlight-color: transparent;
     z-index: 99;
 }
-span.trigger_info > svg.true {
+span.trigger_info svg.true {
     transform: rotate(180deg);
 }
 

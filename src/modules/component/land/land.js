@@ -4,6 +4,16 @@ export default class LandApp extends LightningElement {
 
     @track projects
 
+    showImage = false
+    previewImage(event){
+
+        const {url} = event.detail
+
+        this.imageUrl = url
+
+        showImage = true        
+    }
+
     async connectedCallback(){
         //const url = await (await fetch('/components')).text()
         //const projects = await( await fetch( url ) ).json()

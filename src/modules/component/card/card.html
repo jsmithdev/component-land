@@ -4,7 +4,7 @@
 
         <template if:true={image}>
             <div class="image_container">
-                <img src={image} />
+                <img src={image} onclick={previewImage} />
             </div>
         </template>
 
@@ -32,7 +32,14 @@
             </span>
 
             <template if:true={show}>
+
                 <component-lightndown url={markdown} baseurl={url}></component-lightndown>
+
+                <span class="trigger_info">
+                    <svg onclick={toggle_show} class={show} viewBox="0 0 24 24">
+                        <path d="M7,10L12,15L17,10H7Z"></path>
+                    </svg>
+                </span>
             </template>
         </div>
     </div>

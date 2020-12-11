@@ -35,4 +35,11 @@ export default class LwcCard extends LightningElement {
     toggle_show() {
         this.show = this.show ? false : true
     }
+
+    previewImage(event){
+        const url = event.target.src
+        this.dispatchEvent(new CustomEvent('preview', {
+            detail: { url }
+        }))
+    }
 }
