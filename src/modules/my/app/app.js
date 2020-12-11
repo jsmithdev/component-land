@@ -1,9 +1,7 @@
 import { track, LightningElement } from 'lwc';
-import { navigationItems } from './navigation';
 
 export default class App extends LightningElement {
 
-    @track navigationItems = navigationItems
     @track projects
 
     async connectedCallback(){
