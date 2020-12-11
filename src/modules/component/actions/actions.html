@@ -1,0 +1,15 @@
+<template>
+
+    <div style="display: inline-block;">
+            
+        <component-select
+            options={actions}
+            onchange={handleSelect}>
+        </component-select>
+        <br/>
+        <component-button
+            label={action_label}
+            onclick={runAction}
+        ></component-button>
+    </div>
+</template>

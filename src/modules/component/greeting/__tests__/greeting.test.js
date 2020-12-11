@@ -7,9 +7,9 @@
 // https://github.com/trailheadapps/lwc-recipes-oss
 
 import { createElement } from 'lwc';
-import MyGreeting from 'my/greeting';
+import MyGreeting from 'land/greeting';
 
-describe('my-greeting', () => {
+describe('land-greeting', () => {
     afterEach(() => {
         // The jsdom instance is shared across test cases in a single file so reset the DOM
         while (document.body.firstChild) {
@@ -20,7 +20,7 @@ describe('my-greeting', () => {
     it('contains a div that controls animation.', () => {
         const SPEED_CLASS_VALUES = ['fade-slow', 'fade-fast', 'fade-medium'];
 
-        const element = createElement('my-greeting', {
+        const element = createElement('land-greeting', {
             is: MyGreeting
         });
         document.body.appendChild(element);
@@ -36,7 +36,7 @@ describe('my-greeting', () => {
     it('contains a span tag that displays the greeting message.', () => {
         const INITIAL_GREETING = 'Hello';
 
-        const element = createElement('my-greeting', {
+        const element = createElement('land-greeting', {
             is: MyGreeting
         });
         document.body.appendChild(element);

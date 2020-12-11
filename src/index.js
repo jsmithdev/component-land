@@ -1,7 +1,7 @@
 import { buildCustomElementConstructor } from 'lwc';
-import MyApp from 'my/app';
+import ComponentLand from 'component/land';
 
-customElements.define('my-app', buildCustomElementConstructor(MyApp));
+customElements.define('component-land', buildCustomElementConstructor(ComponentLand));
 
 {
     // Handle Theming

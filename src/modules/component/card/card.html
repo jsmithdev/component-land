@@ -17,16 +17,10 @@
         
         <div class="details">
 
-            <a class="deploy"
-                href={deploy}
-                target="_blank">
-    
-                <svg viewBox="0 0 24 24">
-                    <path d="M14,13V17H10V13H7L12,8L17,13M19.35,10.03C18.67,6.59 15.64,4 12,4C9.11,4 6.6,5.64 5.35,8.03C2.34,8.36 0,10.9 0,14A6,6 0 0,0 6,20H19A5,5 0 0,0 24,15C24,12.36 21.95,10.22 19.35,10.03Z"></path>
-                </svg>
-    
-                <span>Deploy to Salesforce</span>
-            </a>
+            <component-actions
+                name={name}
+                author={author}
+            ></component-actions>
 
             <br />
             <br />
@@ -37,9 +31,8 @@
                 </svg>
             </span>
 
-
             <template if:true={show}>
-                <land-lightndown url={markdown} baseurl={url}></land-lightndown>
+                <component-lightndown url={markdown} baseurl={url}></component-lightndown>
             </template>
         </div>
     </div>

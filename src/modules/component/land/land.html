@@ -1,22 +1,22 @@
 <template>
     <div class="app">
 
-        <land-header
+        <component-header
             icon="./resources/android-icon-192x192.png"
             title="Component Land"
             onfilter={handleFilter}
             onsearch={handleSearch}
-        ></land-header>
+        ></component-header>
 
         <section class="content">
         
             <template if:true={projects}>
                 <template for:each={projects} for:item="item">
                         
-                    <land-card 
+                    <component-card 
                         key={item.title}
                         item={item}
-                    ></land-card>
+                    ></component-card>
                 </template>
             </template>
 

@@ -32,15 +32,6 @@ export default class LwcCard extends LightningElement {
         return this.item && this.item.url ? this.item.url : ''
     }
 
-    // todo add sandbox option
-    /*
-        'https://githubsfdeploy.herokuapp.com/app/githubdeploy' :
-        'https://githubsfdeploy-sandbox.herokuapp.com/app/githubdeploy
-    */
-    get deploy(){
-        return `https://githubsfdeploy.herokuapp.com/app/githubdeploy/${this.author}/${this.name} `
-    }
-
     toggle_show() {
         this.show = this.show ? false : true
     }

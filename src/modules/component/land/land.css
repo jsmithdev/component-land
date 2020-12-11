@@ -100,13 +100,6 @@ footer {
     grid-template-areas: 'header' 'content';
 }
 
-my-nav-header {
-    background: var(--color-dark);
-    border-bottom: 1pt solid var(--color-light);
-    box-shadow: 0px 2px 4px 0 rgba(0, 0, 0, 0.35),
-        0px -4px 10px 0px rgba(0, 0, 0, 0.35);
-}
-
 .content {
     height: inherit;
     grid-area: content;

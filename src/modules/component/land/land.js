@@ -1,6 +1,6 @@
 import { track, LightningElement } from 'lwc';
 
-export default class App extends LightningElement {
+export default class LandApp extends LightningElement {
 
     @track projects
 
