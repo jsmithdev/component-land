@@ -85,8 +85,7 @@ a.deploy svg {
 
 .image_container {
     border-radius: 8px 8px 0 0;
-    background: var(--color-mid);
-    opacity: .9;
+    background: radial-gradient(var(--color-accent), var(--color-mid));
     padding: 0;
     margin: 0;
     height: 200px;
