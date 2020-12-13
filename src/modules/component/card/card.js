@@ -5,8 +5,12 @@ const DEFAULT_DESC = 'No description present'
 
 export default class LwcCard extends LightningElement {
 
+    isActive = false
+
     @api item;
-    @api show;
+
+    get show(){return this.isActive}
+    set show(value){ this.isActive = value ? true : false} 
 
     get author(){
         return this.item && this.item.author ? this.item.author : ''
@@ -33,7 +37,10 @@ export default class LwcCard extends LightningElement {
     }
 
     toggle_show() {
-        this.show = this.show ? false : true
+        this.isActive = !this.isActive
+        if(!this.isActive){
+            this.template.querySelector('.card').scrollIntoView()
+        }
     }
 
     previewImage(event){

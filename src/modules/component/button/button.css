@@ -46,3 +46,16 @@ svg {
 button:hover svg {
     fill: var(--color-accent);
 }
+
+button.success {
+    color: white;
+    background: var(--color-accent);
+    background-image: none;
+    border: var(--color-lightest);
+    /* 
+    background-image: linear-gradient(to right, #84fab0 0%, var(--color-accent) 51%, var(--color-lightest) 100%);
+    */
+}
+button.success svg {
+    fill: var(--color-lightest);
+}
