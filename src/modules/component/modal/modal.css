@@ -23,8 +23,6 @@ section {
 	background: rgba(0, 0, 0, 0.6);
 	overflow: hidden;
 	overflow-y: hidden;
-
-	vertical-align: middle;
 		
 	white-space: normal;
 	vertical-align: middle;
@@ -111,7 +109,7 @@ div.close > span.x {
 	max-width: 90%;
 	max-height: 90%;
 	margin: 0;
-	transform: translate(0, -50%)
+	transform: translate(0, -50%);
 	transition: opacity 0.2s, transform 0.2s, z-index 0s 0.2s;
 
 	position: absolute;

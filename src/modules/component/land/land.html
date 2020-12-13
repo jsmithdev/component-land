@@ -20,12 +20,15 @@
                     ></component-card>
                 </template>
             </template>
+        
+            <template if:true={showImage}>
+                    
+                <component-modal 
+                    title={imageUrl}
+                    active={showImage}></component-modal>
+            </template>
 
-            <component-modal open={showImage}>
-                <span slot="content">
-                    <img width="100%" height="100%" src={imageUrl} />
-                </span>
-            </component-modal>
+
             
             <br><br><br><br><br><br><br><br>
         </section>

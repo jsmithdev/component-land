@@ -1,57 +1,43 @@
 <template>
+	<template if:true={active}>
 
-	<div class="trigger" onclick={show}>
-		<slot name="trigger">
-			<a>{trigger}</a>
-		</slot>
-	</div>
+		<section
+			class="hidden close"
+			role="dialog"
+			tabindex="-1"
+			aria-labelledby="modal-heading-01"
+			aria-modal="true"
+			aria-describedby="modal-content-id-1">
 
-    <template if:true={loading}>
-		Loading...
-    </template>
+			<div class="modal-inner">
 
-	<template if:false={loading}>
-
-		<template if:true={active}>
-			
-			<section
-				class="hidden close"
-				role="dialog"
-				tabindex="-1"
-				aria-labelledby="modal-heading-01"
-				aria-modal="true"
-				aria-describedby="modal-content-id-1">
-
-				<div class="modal-inner">
-
-					<div>
-						<div class="close right" >
-							<span title="Close" class="close">
-								<svg class="close" title="Close" style="width:24px;height:24px" viewBox="0 0 24 24">
-									<path class="close" d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
-								</svg>
-							</span>
-						</div>
-						<div class="card">
-
-							<header>
-								<slot name="header">
-									<h2 class="header">{title}</h2>
-								</slot>
-							</header>
-
-							<article>
-								<slot name="content">
-									Nothing in modal's content slot. See <a href="https://github.com/jsmithdev/modal">readme</a> for more
-								</slot>
-							</article>
-
-						</div>
+				<div>
+					<div class="close right" >
+						<span title="Close" class="close">
+							<svg class="close" title="Close" style="width:24px;height:24px" viewBox="0 0 24 24">
+								<path class="close" d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path>
+							</svg>
+						</span>
 					</div>
+					<div class="card">
 
+						<header>
+							<slot name="header">
+								<h2 class="header">{title}</h2>
+							</slot>
+						</header>
+
+						<article>
+							<slot name="content">
+							</slot>
+						</article>
+
+					</div>
 				</div>
-			</section>
-			<div class="slds-backdrop slds-backdrop_open"></div>
-		</template>
+
+			</div>
+		</section>
+		<div class="slds-backdrop slds-backdrop_open"></div>
+
 	</template>
 </template>

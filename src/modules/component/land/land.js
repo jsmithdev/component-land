@@ -11,28 +11,15 @@ export default class LandApp extends LightningElement {
 
         this.imageUrl = url
 
-        showImage = true        
+        this.showImage = true        
     }
 
     async connectedCallback(){
-        //const url = await (await fetch('/components')).text()
-        //const projects = await( await fetch( url ) ).json()
-        /* 
-        todo use search params as init filtering
-        const params = (new URL(document.location)).searchParams;
-        const type = params.get('type'); 
-        const cmp = params.get('cmp'); 
-        console.dir(type)
-        console.dir(cmp)
-         */
-            
+        
         const url = this.getUrl('jsmithdev','component-land-data','main','lwc-data.json')
-        const projects = await (await fetch( url )).json()
+        const json = await (await fetch( url )).json()
 
-        //console.log('projects=>')
-        //console.log(projects)
-
-        this.projects = projects.map(p => {
+        const projects = json.map(p => {
 
             return Object.assign(p, {
                 get git(){
@@ -48,13 +35,28 @@ export default class LandApp extends LightningElement {
         })
 
         if(!this._init_projects){
-            this._init_projects = Array.from(this.projects)
+            this._init_projects = Array.from(projects)
+        }
+        
+        const params = (new URL(document.location)).searchParams;
+        const share = params.get('share')
+        
+        if(!share){
+            this.projects = projects
+        } else {
+            const data = decodeURIComponent(share)
+            const author = data.substring(0, data.indexOf('/'))
+            const repo = data.substring(data.indexOf('/')+1, data.length)
+            
+            this.showSingle(author, repo)
         }
     }
 
     handleSearch(event) {
-        
         const {value} = event.detail
+        this.search(value)
+    }
+    search(value) {
 
         if(value === ''){ 
             this.projects = this._init_projects 
@@ -70,6 +72,13 @@ export default class LandApp extends LightningElement {
             || item.title.toLowerCase().includes(input)
             || item.keywords.toLowerCase().includes(input)
         })
+    }
+    showSingle(author, repo) {
+
+        const record = this._init_projects.find(item => 
+            item.name === repo && item.author === author)
+
+        this.projects = [ record ]
     }
     handleFilter(event) {
         
