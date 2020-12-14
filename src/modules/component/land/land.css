@@ -95,8 +95,9 @@ footer {
     height: -webkit-fill-available;
     overflow-y: hidden;
     display: grid;
-    grid-template-columns: 100fr;
-    grid-template-rows: 1fr 99fr;
+    grid-gap: 68px;
+    /* grid-template-columns: 100fr;
+    grid-template-rows: 1fr 99fr; */
     grid-template-areas: 'header' 'content';
 }
 
@@ -107,10 +108,8 @@ footer {
     margin-bottom: 3rem;
     overflow-x: hidden;
     overflow-y: auto;
-
     width: 100%;
     max-height: 100vh;
-    padding-top: 25px;
     text-align: center;
 }
 

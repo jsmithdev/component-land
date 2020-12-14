@@ -102,7 +102,14 @@ export default class LandApp extends LightningElement {
         })
     }
 
-    getUrl = (user,repo,branch,filename) => 
-        `https://raw.githubusercontent.com/${user}/${repo}/${branch}/${filename}`
+    getUrl(user,repo,branch,filename){
+        return `https://raw.githubusercontent.com/${user}/${repo}/${branch}/${filename}`
+    }
 
+    scroll(event){
+        //console.log('scroll')
+        event.target.scrollIntoView({ 
+            behavior: 'smooth' 
+        })
+    }
 }

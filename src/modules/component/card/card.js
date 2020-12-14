@@ -39,7 +39,14 @@ export default class LwcCard extends LightningElement {
     toggle_show() {
         this.isActive = !this.isActive
         if(!this.isActive){
-            this.template.querySelector('.card').scrollIntoView()
+            //this.template.querySelector('div').scrollIntoView(true)
+
+            const target = this.template.querySelector('div')
+            console.log(target.parentNode.scrollTop)
+            console.log(target.offsetTop)
+ 
+            //target.parentNode.scrollTop = target.offsetTop - target.parentNode.offsetTop;
+            this.dispatchEvent( new CustomEvent('scroll'))
         }
     }
 

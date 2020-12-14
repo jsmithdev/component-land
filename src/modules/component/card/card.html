@@ -33,13 +33,20 @@
 
             <template if:true={show}>
 
-                <component-lightndown url={markdown} baseurl={url}></component-lightndown>
+                <component-lightndown 
+                    url={markdown} 
+                    baseurl={url}>
 
-                <span class="trigger_info">
-                    <svg onclick={toggle_show} class={show} viewBox="0 0 24 24">
-                        <path d="M7,10L12,15L17,10H7Z"></path>
-                    </svg>
-                </span>
+                    <div slot="footer">
+                        <span class="trigger_info">
+                            <svg onclick={toggle_show} class={show} viewBox="0 0 24 24">
+                                <path d="M7,10L12,15L17,10H7Z"></path>
+                            </svg>
+                        </span>
+                    </div>
+                </component-lightndown>
+
+                
             </template>
         </div>
     </div>

@@ -43,6 +43,8 @@ export default class lightndown extends LightningElement {
     @api string 
     @api baseurl 
 
+    done = false
+
     connectedCallback(){
         
         if(!this.init){
@@ -90,5 +92,6 @@ export default class lightndown extends LightningElement {
 
         // eslint-disable-next-line @lwc/lwc/no-inner-html
         this.template.querySelector('pre').innerHTML = this.marked(markdown);
+        this.done = true
     }
 }
