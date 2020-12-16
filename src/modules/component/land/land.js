@@ -5,13 +5,20 @@ export default class LandApp extends LightningElement {
     @track projects
 
     showImage = false
+
     previewImage(event){
 
         const {url} = event.detail
 
+        console.log(url)
+
         this.imageUrl = url
 
-        this.showImage = true        
+        this.showImage = true
+
+        //this.template.querySelector('component-modal').show()
+        
+        console.log('pi:',this.showImage)
     }
 
     async connectedCallback(){
@@ -96,6 +103,7 @@ export default class LandApp extends LightningElement {
             this.projects = this._init_projects 
             return
         }
+
         this.projects = this._init_projects.filter(item => {
             return item.type.toLowerCase() === type
             && item.platform.toLowerCase() === platform
@@ -108,7 +116,7 @@ export default class LandApp extends LightningElement {
 
     scroll(event){
         //console.log('scroll')
-        event.target.scrollIntoView({ 
+        event.target.scrollIntoView({
             behavior: 'smooth' 
         })
     }

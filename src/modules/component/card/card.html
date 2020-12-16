@@ -4,7 +4,17 @@
 
         <template if:true={image}>
             <div class="image_container">
-                <img src={image} onclick={previewImage} />
+                
+                <component-modal header={name} variant="large">
+                    
+                    <span slot="trigger">
+                        <img class="thumb" src={image} />
+                    </span>
+<!-- onclick={previewImage}  -->
+                    <span slot="content">
+                        <img src={image} style="max-width: 100%; border-radius: 10px;" />
+                    </span>
+                </component-modal>
             </div>
         </template>
 

@@ -1,6 +1,10 @@
 *.cache
 scratch.js
 .history
+.firebase
+.sfdx
+.github
+temp
 
 
 # Log files
