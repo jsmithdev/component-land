@@ -40,7 +40,7 @@ export default class Actions extends LightningElement {
                 value: 'deploy_sandbox',
             },
             {
-                label: 'Deploy to Production',
+                label: 'Deploy to Dev/Prod',
                 value: 'deploy_production',
             },
             {
